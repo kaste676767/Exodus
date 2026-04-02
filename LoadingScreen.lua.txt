@@ -1,0 +1,208 @@
+
+local Key = "KasteIsTuff"
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ExodusKeySystem"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.Parent = game.CoreGui
+
+local LoadFrame = Instance.new("Frame")
+LoadFrame.Size = UDim2.new(0, 360, 0, 160)
+LoadFrame.Position = UDim2.new(0.5, -180, 0.5, -80)
+LoadFrame.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+LoadFrame.BorderSizePixel = 0
+LoadFrame.Parent = ScreenGui
+
+local LoadCorner = Instance.new("UICorner", LoadFrame)
+LoadCorner.CornerRadius = UDim.new(0, 10)
+
+local LoadStroke = Instance.new("UIStroke", LoadFrame)
+LoadStroke.Color = Color3.fromRGB(55, 55, 55)
+LoadStroke.Thickness = 1
+
+local LoadTitle = Instance.new("TextLabel")
+LoadTitle.Size = UDim2.new(1, 0, 0, 60)
+LoadTitle.Position = UDim2.new(0, 0, 0, 20)
+LoadTitle.BackgroundTransparency = 1
+LoadTitle.Text = "exodus"
+LoadTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoadTitle.TextSize = 28
+LoadTitle.Font = Enum.Font.GothamBold
+LoadTitle.Parent = LoadFrame
+
+local LoadSub = Instance.new("TextLabel")
+LoadSub.Size = UDim2.new(1, -24, 0, 20)
+LoadSub.Position = UDim2.new(0, 12, 0, 75)
+LoadSub.BackgroundTransparency = 1
+LoadSub.Text = "loading..."
+LoadSub.TextColor3 = Color3.fromRGB(110, 110, 110)
+LoadSub.TextSize = 13
+LoadSub.Font = Enum.Font.Gotham
+LoadSub.Parent = LoadFrame
+
+local BarBG = Instance.new("Frame")
+BarBG.Size = UDim2.new(1, -24, 0, 4)
+BarBG.Position = UDim2.new(0, 12, 0, 108)
+BarBG.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+BarBG.BorderSizePixel = 0
+BarBG.Parent = LoadFrame
+
+local BarBGCorner = Instance.new("UICorner", BarBG)
+BarBGCorner.CornerRadius = UDim.new(0, 4)
+
+local BarFill = Instance.new("Frame")
+BarFill.Size = UDim2.new(0, 0, 1, 0)
+BarFill.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BarFill.BorderSizePixel = 0
+BarFill.Parent = BarBG
+
+local BarFillCorner = Instance.new("UICorner", BarFill)
+BarFillCorner.CornerRadius = UDim.new(0, 4)
+
+local stopAt = math.random(65, 80)
+
+for i = 1, stopAt do
+    BarFill.Size = UDim2.new(i / 100, 0, 1, 0)
+    task.wait(0.025)
+end
+
+task.wait(1)
+LoadFrame.Visible = false
+
+local Frame = Instance.new("Frame")
+local TopBar = Instance.new("Frame")
+local AccentLine = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Desc = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
+local ConfirmButton = Instance.new("TextButton")
+
+Frame.Size = UDim2.new(0, 360, 0, 240)
+Frame.Position = UDim2.new(0.5, -180, 0.5, -120)
+Frame.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+Frame.BorderSizePixel = 0
+Frame.Parent = ScreenGui
+
+local FrameCorner = Instance.new("UICorner", Frame)
+FrameCorner.CornerRadius = UDim.new(0, 10)
+
+local FrameStroke = Instance.new("UIStroke", Frame)
+FrameStroke.Color = Color3.fromRGB(55, 55, 55)
+FrameStroke.Thickness = 1
+
+TopBar.Size = UDim2.new(1, 0, 0, 48)
+TopBar.Position = UDim2.new(0, 0, 0, 0)
+TopBar.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+TopBar.BorderSizePixel = 0
+TopBar.ZIndex = 2
+TopBar.Parent = Frame
+
+local TopCorner = Instance.new("UICorner", TopBar)
+TopCorner.CornerRadius = UDim.new(0, 10)
+
+local TopFix = Instance.new("Frame", TopBar)
+TopFix.Size = UDim2.new(1, 0, 0.5, 0)
+TopFix.Position = UDim2.new(0, 0, 0.5, 0)
+TopFix.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+TopFix.BorderSizePixel = 0
+TopFix.ZIndex = 2
+
+AccentLine.Size = UDim2.new(1, 0, 0, 1)
+AccentLine.Position = UDim2.new(0, 0, 1, -1)
+AccentLine.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+AccentLine.BorderSizePixel = 0
+AccentLine.ZIndex = 3
+AccentLine.Parent = TopBar
+
+Title.Size = UDim2.new(1, 0, 1, 0)
+Title.BackgroundTransparency = 1
+Title.Text = "exodus"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 20
+Title.Font = Enum.Font.GothamBold
+Title.ZIndex = 3
+Title.Parent = TopBar
+
+Desc.Size = UDim2.new(1, -24, 0, 28)
+Desc.Position = UDim2.new(0, 12, 0, 62)
+Desc.BackgroundTransparency = 1
+Desc.Text = "key is in the discord server /Q5qShnsEJH"
+Desc.TextColor3 = Color3.fromRGB(120, 120, 120)
+Desc.TextSize = 12
+Desc.Font = Enum.Font.Gotham
+Desc.TextWrapped = true
+Desc.Parent = Frame
+
+TextBox.Size = UDim2.new(1, -24, 0, 40)
+TextBox.Position = UDim2.new(0, 12, 0, 102)
+TextBox.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+TextBox.BorderSizePixel = 0
+TextBox.PlaceholderText = "Enter key..."
+TextBox.PlaceholderColor3 = Color3.fromRGB(80, 80, 80)
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(220, 220, 220)
+TextBox.TextSize = 13
+TextBox.Font = Enum.Font.Gotham
+TextBox.ClearTextOnFocus = false
+TextBox.Parent = Frame
+
+local TBCorner = Instance.new("UICorner", TextBox)
+TBCorner.CornerRadius = UDim.new(0, 6)
+
+local TBStroke = Instance.new("UIStroke", TextBox)
+TBStroke.Color = Color3.fromRGB(50, 50, 50)
+TBStroke.Thickness = 1
+
+local TBPadding = Instance.new("UIPadding", TextBox)
+TBPadding.PaddingLeft = UDim.new(0, 10)
+
+ConfirmButton.Size = UDim2.new(1, -24, 0, 38)
+ConfirmButton.Position = UDim2.new(0, 12, 0, 158)
+ConfirmButton.BackgroundColor3 = Color3.fromRGB(235, 235, 235)
+ConfirmButton.TextColor3 = Color3.fromRGB(10, 10, 10)
+ConfirmButton.Text = "Confirm"
+ConfirmButton.TextSize = 13
+ConfirmButton.Font = Enum.Font.GothamBold
+ConfirmButton.BorderSizePixel = 0
+ConfirmButton.AutoButtonColor = false
+ConfirmButton.Parent = Frame
+
+local BtnCorner = Instance.new("UICorner", ConfirmButton)
+BtnCorner.CornerRadius = UDim.new(0, 6)
+
+ConfirmButton.MouseEnter:Connect(function()
+    ConfirmButton.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+end)
+ConfirmButton.MouseLeave:Connect(function()
+    ConfirmButton.BackgroundColor3 = Color3.fromRGB(235, 235, 235)
+end)
+
+local keyValid = false
+ConfirmButton.MouseButton1Click:Connect(function()
+    if TextBox.Text == Key then
+        keyValid = true
+    else
+        TextBox.PlaceholderText = "Stop guessing vro"
+        TextBox.Text = ""
+        TBStroke.Color = Color3.fromRGB(200, 50, 50)
+        task.wait(1.5)
+        TBStroke.Color = Color3.fromRGB(50, 50, 50)
+    end
+end)
+
+repeat task.wait() until keyValid
+
+Frame.Visible = false
+LoadFrame.Visible = true
+LoadSub.Text = "loading..."
+
+for i = stopAt + 1, 100 do
+    BarFill.Size = UDim2.new(i / 100, 0, 1, 0)
+    task.wait(0.025)
+end
+
+task.wait(0.3)
+LoadFrame:Destroy()
+
+return true
